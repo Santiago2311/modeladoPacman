@@ -5,12 +5,28 @@ using Agents
 end
 
 possible_transitions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+matrix = [
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+    0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0;
+    0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 0;
+    0 1 1 1 0 1 0 0 0 0 0 1 0 1 1 1 0;
+    0 1 0 0 0 1 1 1 1 1 1 1 0 0 0 1 0;
+    0 1 0 1 0 1 0 0 0 0 0 1 1 1 0 1 0;
+    0 1 1 1 0 1 0 1 1 1 0 1 0 1 0 1 0;
+    0 1 0 1 0 1 0 1 1 1 0 1 0 1 0 1 0;
+    0 1 0 1 1 1 0 0 1 0 0 1 0 1 1 1 0;
+    0 1 0 0 0 1 1 1 1 1 1 1 0 0 0 1 0;
+    0 1 1 1 0 1 0 0 0 0 0 1 0 1 1 1 0;
+    0 1 0 1 0 1 0 1 1 1 0 0 0 1 0 1 0;
+    0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0;
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+]
 
 function agent_step!(agent, model)
     posible_moves = []
     for movement in possible_transitions
         new_pos = agent.pos .+ movement
-        if all(1 .<= new_pos .<= size(abmspace(model))) && matrix[new_pos[2]][new_pos[1]] == 1
+        if all(1 .<= new_pos .<= size(abmspace(model))) && matrix[new_pos[2], new_pos[1]] == 1
             push!(posible_moves, movement)
         end
     end
