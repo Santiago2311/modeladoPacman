@@ -43,7 +43,7 @@ const App = () => {
             <rect x={250 + 25 * rowidx} y={5 + 25 * colidx} width={25} height={25} fill={value == 1 ? "lightgray" : "gray"}/>
       ))
       }
-      <image x={255 + 25 * posX} y={9 + 25 * posY} href="fantasma.png"/>
+      <image x={255 + 25 * posX} y={9 + 25 * posY} href="ghost.png"/>
       </svg>
     </div>
   );
