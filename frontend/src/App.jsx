@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 const App = () => {
 
-  const [posX, setPosX] = useState(6);
-  const [posY, setPosY] = useState(8);
+  const [posX, setPosX] = useState(1);
+  const [posY, setPosY] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
